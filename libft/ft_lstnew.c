@@ -3,24 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkasper <jkasper@student.42Heilbronn.de    +#+  +:+       +#+        */
+/*   By: jleslee <jleslee@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/22 19:50:20 by jkasper           #+#    #+#             */
-/*   Updated: 2022/04/08 17:27:58 by mhahn            ###   ########.fr       */
+/*   Created: 2021/10/26 12:07:26 by jleslee           #+#    #+#             */
+/*   Updated: 2021/10/27 16:53:48 by jleslee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+//******************Bonus Part******************//
+
 #include "libft.h"
+
+// Создаёт новый список
 
 t_list	*ft_lstnew(void *content)
 {
-	t_list	*new;
+	t_list	*list;
 
-	new = ft_gc_malloc(sizeof(t_list));
-	if (new == NULL)
+	list = NULL;
+	list = (t_list *)malloc(sizeof(t_list));
+	if (list == NULL)
 		return (NULL);
-	new->content = content;
-	new->next = NULL;
-	new->prev = NULL;
-	return (new);
+	list->content = content;
+	list->next = NULL;
+	return (list);
 }
+
+// list->content = content; - создаём 
+// элемент content со значением content
+// list->next = NULL; - обнуляем следующий 
+//элемент для удобства перечисления (while(lst->next != NULL))

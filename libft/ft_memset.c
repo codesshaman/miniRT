@@ -3,26 +3,43 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkasper <jkasper@student.42Heilbronn.de    +#+  +:+       +#+        */
+/*   By: jleslee <jleslee@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/15 13:00:39 by jkasper           #+#    #+#             */
-/*   Updated: 2021/06/17 15:31:23 by jkasper          ###   ########.fr       */
+/*   Created: 2021/10/10 16:40:04 by jleslee           #+#    #+#             */
+/*   Updated: 2021/10/26 21:18:59 by jleslee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+//******************Part I******************//
 
-void	*ft_memset(void *b, int c, size_t len)
+#include "libft.h"
+//#include <stdio.h>
+
+// dest - заполняемый массив, 
+// char - символ для заполнения, 
+// n - кол-во заполняемых ячеек
+
+void	*ft_memset(void *dest, int ch, size_t n)
 {
 	size_t	i;
-	char	*string;
+	char	*arr;
 
-	string = b;
 	i = 0;
-	while (i < len)
+	arr = (char *)dest;
+	while (i < n)
 	{
-		string[i] = c;
+		arr[i] = ch;
 		i++;
 	}
-	return (string);
+	return ((char *)dest);
 }
+
+// int main(int argc, char *argv[]){
+// 	if(argc > 0){
+// 		char arr[4] = "abcd";
+// 		ft_memset(arr, '1', (size_t)4);
+// 		printf("%s", arr);
+// 		printf("%c", '\n');
+// 	}
+// 	return (0);
+// }

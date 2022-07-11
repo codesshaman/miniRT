@@ -3,78 +3,139 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkasper <jkasper@student.42Heilbronn.de    +#+  +:+       +#+        */
+/*   By: jleslee <jleslee@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/18 11:27:24 by jkasper           #+#    #+#             */
-/*   Updated: 2022/04/08 17:40:33 by jkasper          ###   ########.fr       */
+/*   Created: 2021/10/16 10:46:31 by jleslee           #+#    #+#             */
+/*   Updated: 2021/10/26 21:20:29 by jleslee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+//******************Part II******************//
+
 #include "libft.h"
+// #include <stdio.h>
 
-static char	**ft_freeman(char **restr, size_t count)
+// Разбитие строки *s на
+// Массивы по символу c
+
+// Отлавливаем утечки памяти
+
+void	*leak_hunter(char **arr, int words_len)
 {
-	size_t	i;
+	int	i;
 
-	i = count;
-	while (restr[i] != NULL)
+	i = 0;
+	if (words_len > 0)
 	{
-		ft_gc_free(restr[i]);
-		i++;
+		while (i < words_len)
+		{
+			free(arr[i]);
+			i++;
+		}
 	}
-	ft_gc_free(restr);
+	free(arr);
 	return (NULL);
 }
 
-static char	**ft_callsplit(char *s, size_t count, size_t i, size_t ii)
-{
-	char	**rs;
+// Подсчитываем общую длинну символов
 
-	rs = ft_calloc(count + 1, sizeof(char *));
-	if (rs == NULL)
-		return (NULL);
-	if (ii >= i + 1)
-	{
-		rs[count - 1] = ft_strdup(s + i);
-		if (rs[count - 1] == NULL)
-			return (ft_freeman(rs, count));
-	}
-	return (rs);
-}
-
-static char	**ft_recsplit(char *s, char c, size_t count)
+int	sym_len(char const *str, char c)
 {
-	size_t	i;
-	size_t	ii;
-	char	**rs;
+	int		i;
 
 	i = 0;
-	while (s[i] != '\0' && s[i] == c)
+	while (str[i] && str[i] != c)
 		i++;
-	ii = i;
-	while (s[ii] != c && s[ii] != '\0')
-		ii++;
-	count++;
-	if (i >= ft_strlen(s) || ii >= ft_strlen(s))
-	{
-		rs = ft_callsplit(s, count, i, ii);
-		if (rs == NULL)
-			return (NULL);
-		return (rs);
-	}
-	rs = ft_recsplit(s + ii, c, count);
-	if (rs == NULL)
-		return (NULL);
-	rs[count - 1] = ft_substr(s, i, ii - i);
-	if (rs[count - 1] == NULL)
-		return (ft_freeman(rs, count));
-	return (rs);
+	return (i);
 }
 
-char	**ft_split(char const *s, char c)
+// Подсчитываем количество слов
+
+int	words_counter(char const *str, char c)
 {
-	if (s == NULL)
-		return (NULL);
-	return (ft_recsplit(((char *)s), c, 0));
+	int		i;
+	int		counter;
+
+	if (!str)
+		return (0);
+	i = 0;
+	counter = 0;
+	while (str[i])
+	{
+		if (str[i] != c && (str[i + 1] == c || !(str[i + 1])))
+			counter++;
+		i++;
+	}
+	return (counter);
 }
+
+// Создаём слова и заполняем ими массив
+
+char	**words_maker(char const *str, char **arr, char c, int words)
+{
+	int		i;
+	int		j;
+	int		len;
+
+	i = 0;
+	while (i < words)
+	{
+		while (*str == c)
+			str++;
+		len = sym_len(str, c);
+		arr[i] = NULL;
+		arr[i] = (char *)malloc(sizeof(char) * (len + 1));
+		if (arr[i] == NULL)
+			return (leak_hunter(arr, i));
+		j = 0;
+		while (j < len)
+			arr[i][j++] = *str++;
+		arr[i][j] = '\0';
+		i++;
+	}
+	arr[i] = NULL;
+	return (arr);
+}
+
+char	**ft_split(char	const *s, char c)
+{
+	char	**arr;
+	int		words;
+
+	if (!s && !c)
+		return (NULL);
+	words = 0;
+	if (c == '\0' && !s)
+		return (0);
+	words = words_counter(s, c);
+	arr = NULL;
+	arr = (char **)malloc(sizeof(char *) * (words + 1));
+	if (arr == NULL)
+		return (NULL);
+	return (words_maker(s, arr, c, words));
+}
+
+// int				main(void)
+// {
+// 	char	**arr;
+// 	unsigned int	i;
+
+// 	i = 0;
+// 	arr = ft_split("  Hello foo bar   baz ", ' ');
+// 	while (arr[i] != NULL)
+// 	{
+// 		printf("%s", arr[i]);
+//         printf("%c", '\n');
+// 		i++;
+// 	}
+// 	i = 0;
+// 	arr = ft_split("\0aa\0bbb", '\0');
+// 	if (arr == 0)
+// 		printf("%s\n", "null");
+// 	while (arr[i] != NULL)
+// 	{
+// 		printf("%s", arr[i]);
+//         printf("%c", '\n');
+// 		i++;
+// 	}
+// }

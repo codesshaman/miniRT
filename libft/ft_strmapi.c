@@ -3,33 +3,43 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkasper <jkasper@student.42Heilbronn.de    +#+  +:+       +#+        */
+/*   By: jleslee <jleslee@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/18 14:11:34 by jkasper           #+#    #+#             */
-/*   Updated: 2022/04/08 17:29:25 by mhahn            ###   ########.fr       */
+/*   Created: 2021/10/25 20:53:38 by jleslee           #+#    #+#             */
+/*   Updated: 2021/10/26 12:17:24 by jleslee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+//******************Part II******************//
+
+// Применяет к каждому символу строки функцию f
+
 #include "libft.h"
+// #include <libft.h>
+// #include "ft_strlen.c"
+// #include "ft_strdup.c"
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t	i;
-	size_t	len;
-	char	*rc;
+	int		i;
+	char	*res;
 
-	if (s == NULL)
-		return (NULL);
 	i = 0;
-	len = ft_strlen(s);
-	rc = ft_gc_malloc(sizeof(char) * len + 1);
-	if (rc == NULL)
+	if (!s || !f)
 		return (NULL);
-	while (s[i] != '\0')
+	res = NULL;
+	res = ft_strdup(s);
+	if (res == NULL)
+		return (NULL);
+	while (res[i])
 	{
-		rc[i] = f(i, s[i]);
+		res[i] = f(i, res[i]);
 		i++;
 	}
-	rc[i] = '\0';
-	return (rc);
+	return (res);
 }
+
+// int main(void){
+//     printf("%s", ft_strmapi("Hello, world!", mapi_toupper()));
+//     return (0);
+// }

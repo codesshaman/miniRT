@@ -3,15 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkasper <jkasper@student.42Heilbronn.de    +#+  +:+       +#+        */
+/*   By: jleslee <jleslee@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/19 16:13:27 by jkasper           #+#    #+#             */
-/*   Updated: 2021/07/19 23:07:08 by jkasper          ###   ########.fr       */
+/*   Created: 2021/10/25 22:29:47 by jleslee           #+#    #+#             */
+/*   Updated: 2021/10/26 12:20:24 by jleslee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+//******************Part II******************//
+
+// Передаёт символ c в файловый дескриптор fd
+
 #include <unistd.h>
+#include "libft.h"
 
 void	ft_putchar_fd(char c, int fd)
 {

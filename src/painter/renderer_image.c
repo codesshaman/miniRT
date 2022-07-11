@@ -15,6 +15,7 @@
 #include "mlx.h"
 
 #include "libft.h"
+#include "gc.h"
 #include "renderer_image.h"
 
 t_renderer_image	*renderer_image_new(

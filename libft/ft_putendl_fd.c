@@ -3,19 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkasper <jkasper@student.42Heilbronn.de    +#+  +:+       +#+        */
+/*   By: jleslee <jleslee@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/18 14:50:39 by jkasper           #+#    #+#             */
-/*   Updated: 2021/06/20 19:32:25 by jkasper          ###   ########.fr       */
+/*   Created: 2021/10/25 22:39:21 by jleslee           #+#    #+#             */
+/*   Updated: 2021/10/26 12:23:01 by jleslee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+//******************Part II******************//
+
+// Печатает строку и переводит каретку на новую
+
 #include "libft.h"
 
 void	ft_putendl_fd(char *s, int fd)
 {
 	ft_putstr_fd(s, fd);
-	write(fd, "\n", 1);
-	return ;
+	ft_putchar_fd('\n', fd);
 }

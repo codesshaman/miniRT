@@ -3,24 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkasper <jkasper@student.42Heilbronn.de    +#+  +:+       +#+        */
+/*   By: jleslee <jleslee@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/22 20:21:30 by jkasper           #+#    #+#             */
-/*   Updated: 2021/07/31 19:00:44 by jkasper          ###   ########.fr       */
+/*   Created: 2021/10/26 13:35:56 by jleslee           #+#    #+#             */
+/*   Updated: 2021/10/26 13:56:59 by jleslee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+//******************Bonus Part******************//
+
 #include "libft.h"
 
-void	*ft_lstclear(t_list **lst, void (*del)(void*))
+// Удаляет всю цепочку списка, освобождает память
+// И ставит в NULL значение указателя на список
+
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
+	t_list	*elem;
 	t_list	*next;
 
-	while (*lst != NULL)
+	elem = *lst;
+	while (elem != NULL)
 	{
-		next = (*lst)->next;
-		ft_lstdelone(*lst, del);
-		*lst = next;
+		next = elem->next;
+		ft_lstdelone(elem, del);
+		elem = next;
 	}
-	return (NULL);
+	*lst = NULL;
 }

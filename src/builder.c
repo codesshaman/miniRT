@@ -12,9 +12,9 @@
 
 #include <math.h>
 #include <stdio.h>
-
-#include "minirt.h"
 #include "matrix.h"
+#include "minirt.h"
+#include "gc.h"
 
 t_vector	rt_cam_svec(t_mixer *mixer, t_vector px, t_vector py, t_vector norm)
 {

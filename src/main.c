@@ -14,6 +14,7 @@
 #include "mlx.h"
 #include "libft.h"
 #include <stdio.h>
+#include "gc.h"
 
 static void	print_lexer_error(int error)
 {

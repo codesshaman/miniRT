@@ -3,19 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkasper <jkasper@student.42Heilbronn.de    +#+  +:+       +#+        */
+/*   By: jleslee <jleslee@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/22 19:58:03 by jkasper           #+#    #+#             */
-/*   Updated: 2021/08/28 23:17:47 by jkasper          ###   ########.fr       */
+/*   Created: 2021/10/26 12:44:41 by jleslee           #+#    #+#             */
+/*   Updated: 2021/10/26 13:33:57 by jleslee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+//******************Bonus Part******************//
+
 #include "libft.h"
+
+// Добавляет новый элемент в начало списка
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
+	if (lst == NULL || new == NULL)
+		return ;
 	new->next = *lst;
 	*lst = new;
-	if (new->next != NULL)
-		new->next->prev = new;
 }

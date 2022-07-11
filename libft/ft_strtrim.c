@@ -3,49 +3,72 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkasper <jkasper@student.42Heilbronn.de    +#+  +:+       +#+        */
+/*   By: jleslee <jleslee@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/18 10:48:10 by jkasper           #+#    #+#             */
-/*   Updated: 2021/06/22 13:10:17 by jkasper          ###   ########.fr       */
+/*   Created: 2021/10/15 15:50:52 by jleslee           #+#    #+#             */
+/*   Updated: 2021/10/28 13:30:07 by jleslee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+//******************Part II******************//
 
-static char	*ft_cal(char *rs, size_t s1len, size_t i, char const *s1)
+#include "libft.h"
+// #include <stdio.h>
+// #include "ft_strlen.c"
+// #include "ft_strlcpy.c"
+// #include "ft_strdup.c"
+
+// Обрезка строки s1, если в начале и
+// В конце строки встречаются символы
+// Из набора set
+
+int	set_check(char const sym, char const *set)
 {
-	if (i >= s1len || s1[0] == '\0')
-		rs = ft_calloc(1, 1);
-	else
-		rs = ft_calloc(((s1len - i) + 2), 1);
-	if (rs == NULL)
-		return (NULL);
-	return (rs);
+	int	i;
+
+	i = 0;
+	if (!sym || !set)
+		return (0);
+	while (set[i] != '\0')
+	{
+		if (set[i] == sym)
+			return (1);
+		i++;
+	}
+	return (0);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	s1len;
-	char	*rs;
+	char	*str;
 	size_t	i;
+	size_t	j;
+	size_t	end;
 
-	if (s1 == NULL)
-		return (NULL);
-	rs = NULL;
-	s1len = ft_strlen(s1);
 	i = 0;
-	if (set != NULL)
-	{
-		while (s1[i] != '\0' && ft_strchr(set, s1[i]) != NULL)
-			i++;
-		if (i >= s1len || s1[0] == '\0')
-			return (ft_cal(rs, s1len, i, s1));
-		while (ft_strchr(set, s1[s1len]) != NULL)
-			s1len--;
-	}
-	rs = ft_cal(rs, s1len, i, s1);
-	if (rs == NULL)
+	j = 0;
+	if (!s1 || !set)
 		return (NULL);
-	ft_strlcpy(rs, (s1 + i), (s1len - i) + 2);
-	return (rs);
+	while (s1[i] && set_check(s1[i], set))
+		i++;
+	end = ft_strlen(s1);
+	while (end > i && set_check(s1[end - 1], set))
+		end--;
+	str = (char *)malloc(sizeof(*s1) * (end - i + 1));
+	if (!str)
+		return (NULL);
+	while (i < end)
+		str[j++] = s1[i++];
+	str[j] = 0;
+	return (str);
 }
+
+// int main(int argc, char *argv[]){
+// 	if(argc > 0){
+// 		printf("%s", ft_strtrim("abdfrde", "ae"));
+// 		printf("%c", '\n');
+// 		printf("%s", ft_strtrim(argv[1], argv[2]));
+// 		printf("%c", '\n');
+// 	}
+// 	return (0);
+// }

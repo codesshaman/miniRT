@@ -12,6 +12,7 @@
 
 #include <math.h>
 #include "mlx.h"
+#include "gc.h"
 #include "minirt.h"
 
 static inline void	free_cam_vecs(t_mixer *self)
