@@ -56,13 +56,3 @@ char	**ft_realloc_charpp(char **old, size_t new_size)
 		freetili(old);
 	return (new);
 }
-
-int	ft_char_arr_len(char **arr)
-{
-	int	i;
-
-	i = 0;
-	while (arr[i] != NULL)
-		i++;
-	return (i);
-}

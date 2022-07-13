@@ -76,13 +76,3 @@ char	**ft_strsplit(char const *s, char *c)
 		return (NULL);
 	return (ft_recsplit(((char *)s), c, 0));
 }
-
-int	ft_char_arr_len(char **arr)
-{
-	int	i;
-
-	i = 0;
-	while (arr[i] != NULL)
-		i++;
-	return (i);
-}

@@ -12,6 +12,7 @@
 
 #include <stdio.h>
 #include "libft.h"
+#include "gc.h"
 
 void	ft_skip_c(char *s, char *c, size_t *count)
 {
@@ -63,6 +64,32 @@ size_t	ft_skip(const char *s)
 
 	i = 0;
 	while (s[i] != '\0')
+		i++;
+	return (i);
+}
+
+void	ft_free_char_arr(char **arr)
+{
+	int	i;
+
+	i = 0;
+	if (arr == NULL)
+		return ;
+	while (arr[i] != NULL)
+	{
+		ft_gc_free(arr[i]);
+		arr[i] = NULL;
+		i++;
+	}
+	ft_gc_free(arr);
+}
+
+int	ft_char_arr_len(char **arr)
+{
+	int	i;
+
+	i = 0;
+	while (arr[i] != NULL)
 		i++;
 	return (i);
 }
