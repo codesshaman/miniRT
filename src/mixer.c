@@ -14,8 +14,9 @@
 
 #include "minirt.h"
 #include "mlx.h"
-#include "renderer_image.h"
 #include "gc.h"
+#include "renderer_image.h"
+#include "matrix.h"
 #include "libft.h"
 
 inline void	set_max_bounces(t_mixer *self, char *bounces)

@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "matrix.h"
+#include "gc.h"
 
 void	matrix_destroy(t_matrix __attribute__((unused)) *this)
 {

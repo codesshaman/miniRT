@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "minirt.h"
-
+#include "matrix.h"
 #include <stdio.h>
 
 inline void	print_help(char *bad_arg)

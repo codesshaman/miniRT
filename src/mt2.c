@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "minirt.h"
+#include "gc.h"
 
 void	free_mixer_copy(t_mixer *self)
 {

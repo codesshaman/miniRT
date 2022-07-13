@@ -13,6 +13,7 @@
 #ifndef ABS_H
 # define ABS_H
 #include "libft.h"
+#include "gc.h"
 
 /*
  * Returns the absolute value of the given long. Always returns a positive
@@ -28,5 +29,9 @@ void	ft_gc_exit(int code);
  */
 void	ft_gc_free(void *ptr);
 void	*ft_gc_malloc(size_t size);
+char	**ft_strsplit(char const *s, char *c);
+void	ft_skip_c(char *s, char *c, size_t *count);
+void	ft_skip_s(char *s, char *c, size_t *count);
+size_t	ft_skip(const char *s);
 
 #endif

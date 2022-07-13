@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include "gc.h"
 #include "minirt.h"
 #include "renderer_image.h"
 

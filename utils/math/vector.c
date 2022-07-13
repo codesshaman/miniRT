@@ -12,8 +12,8 @@
 
 #include <math.h>
 #include <stdio.h>
-
 #include "vector.h"
+#include "gc.h"
 
 t_vector	*vector_new(float x, float y, float z)
 {

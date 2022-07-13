@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include <stdio.h>
-
 #include "libft.h"
 
 void	ft_skip_c(char *s, char *c, size_t *count)
@@ -56,4 +55,14 @@ void	ft_skip_s(char *s, char *c, size_t *count)
 		i++;
 	}
 	*count = i;
+}
+
+size_t	ft_skip(const char *s)
+{
+	size_t	i;
+
+	i = 0;
+	while (s[i] != '\0')
+		i++;
+	return (i);
 }

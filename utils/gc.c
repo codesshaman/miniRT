@@ -67,14 +67,6 @@ void	ft_gc_free(void *ptr)
 	pthread_mutex_unlock(ft_gc_mutex());
 }
 
-//void	ft_gc_clear(void)
-//{
-//	pthread_mutex_lock(ft_gc_mutex());
-//	arraylist_clear(ft_gc_list(), free);
-//	*ft_gc_list() = NULL;
-//	pthread_mutex_unlock(ft_gc_mutex());
-//}
-
 void	ft_gc_exit(int code)
 {
 	size_t	leak_count;

@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "minirt.h"
-
+#include "gc.h"
 #include <math.h>
 #include <stdio.h>
 #include <unistd.h>

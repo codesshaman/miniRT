@@ -13,6 +13,7 @@
 #include "minirt.h"
 #include "parser.h"
 #include <stdbool.h>
+#include "matrix.h"
 
 void	top_position(t_obj_l *obj)
 {

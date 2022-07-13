@@ -12,6 +12,7 @@
 
 #include "vertex.h"
 #include "matrix.h"
+#include "gc.h"
 
 t_vertex3d	*vertex3d_new(float x, float y, float z)
 {

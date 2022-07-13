@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "gc.h"
 
 static char	**ft_freeman(char **restr, size_t count)
 {
@@ -53,7 +54,7 @@ static char	**ft_recsplit(char *s, char *c, size_t count)
 	ii = i;
 	ft_skip_c(s, c, &ii);
 	count++;
-	if (i >= ft_strlen(s) || ii >= ft_strlen(s))
+	if (i >= ft_skip(s) || ii >= ft_skip(s))
 	{
 		rs = ft_callsplit(s, count, i, ii);
 		if (rs == NULL)
@@ -74,4 +75,14 @@ char	**ft_strsplit(char const *s, char *c)
 	if (s == NULL)
 		return (NULL);
 	return (ft_recsplit(((char *)s), c, 0));
+}
+
+int	ft_char_arr_len(char **arr)
+{
+	int	i;
+
+	i = 0;
+	while (arr[i] != NULL)
+		i++;
+	return (i);
 }

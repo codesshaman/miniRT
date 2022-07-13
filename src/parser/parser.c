@@ -14,6 +14,7 @@
 #include "libft.h"
 #include "parser.h"
 #include "minirt.h"
+#include "gc.h"
 
 int	add_object(char *buffer, t_mixer *m_data)
 {

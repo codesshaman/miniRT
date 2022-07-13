@@ -13,6 +13,7 @@
 #include "get_next_line.h"
 #include "get_next_line_utils.h"
 #include "minirt.h"
+#include "gc.h"
 
 t_string_builder	*string_builder_new(void)
 {

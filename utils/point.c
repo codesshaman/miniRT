@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "point.h"
+#include "gc.h"
 
 t_point	*point_new(long x, long y)
 {

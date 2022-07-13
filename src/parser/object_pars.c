@@ -13,6 +13,7 @@
 #include "parser.h"
 #include "minirt.h"
 #include <stdbool.h>
+#include "matrix.h"
 
 int	add_light_p2(t_obj_l *curr, char **line)
 {

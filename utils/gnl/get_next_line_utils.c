@@ -15,6 +15,7 @@
 #include "get_next_line_utils.h"
 #include "get_next_line.h"
 #include "libft.h"
+#include "gc.h"
 
 void	*gnl_memcpy(void *dst, const void *src, size_t n)
 {

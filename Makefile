@@ -9,11 +9,12 @@ HDR         = $(addprefix include/,$(HEAD_FILES))
 
 UTILS_FILES = arraylist.c arraylist_array.c arraylist_array_unsafe.c arraylist_get.c \
 			  arraylist_insert.c arraylist_remove.c arraylist_reset_indices.c gc.c   \
-			  arraylist_size.c hex_str_to_unsigned_int.c point.c point_copy.c        \
-			  vertex.c vertex_cast.c vertex_copy.c arraylist_find.c
+			  arraylist_size.c hex_str_to_unsigned_int.c point.c point_copy.c skip.c \
+			  vertex.c vertex_cast.c vertex_copy.c arraylist_find.c strsplit.c
 MATH_FILES  = abs.c matrix.c matrix_calculations.c matrix_destroy.c matrix_filler.c   \
-			  vector.c vector_add_sub.c vector_delete.c vector_division.c\
-			  vector_multiplications.c vector_length.c vector_multiplications_numbers.c
+			  vector.c vector_add_sub.c vector_delete.c vector_division.c fatol.c \
+			  vector_multiplications.c vector_length.c realloc_charpp.c \
+			  vector_multiplications_numbers.c atof.c
 GNL_FILES	= get_next_line.c get_next_line_utils.c
 
 UTILS_FOLDER= utils/

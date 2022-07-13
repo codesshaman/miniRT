@@ -13,6 +13,7 @@
 #include "minirt.h"
 #include "libft.h"
 #include "parser.h"
+#include "matrix.h"
 
 //side: 0 top, 1 bottom, 2 left, 3 right, 4 front, 5 back
 t_vector	determine_position(t_obj_l *self, t_vector vec, int side)

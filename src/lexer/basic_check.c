@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "lexer.h"
+#include "matrix.h"
 
 int	check_vector(char *str)
 {

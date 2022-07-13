@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "vector.h"
+#include "gc.h"
 
 void	vector_destroy(t_vector __attribute__((unused)) *this)
 {

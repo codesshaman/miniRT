@@ -13,6 +13,8 @@
 #include "minirt.h"
 #include "libft.h"
 #include "lexer.h"
+#include "matrix.h"
+#include "gc.h"
 
 int	check_camera(char **splitline)
 {

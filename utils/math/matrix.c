@@ -12,6 +12,7 @@
 
 #include "matrix.h"
 #include "vertex.h"
+#include "gc.h"
 
 t_matrix	*matrix_new(
 				float **matrix,

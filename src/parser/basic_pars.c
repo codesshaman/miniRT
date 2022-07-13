@@ -12,6 +12,7 @@
 
 #include "parser.h"
 #include "minirt.h"
+#include "matrix.h"
 
 t_rgbof	get_color(char *src)
 {
