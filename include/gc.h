@@ -10,12 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef GC_H
+# define GC_H
 
-
-#ifndef ABS_H
-# define ABS_H
-#include "libft.h"
-#include "gc.h"
+# include "libft.h"
 
 /*
  * Returns the absolute value of the given long. Always returns a positive
