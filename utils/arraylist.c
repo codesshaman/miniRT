@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   arraylist.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkasper <jkasper@student.42Heilbronn.de    +#+  +:+       +#+        */
+/*   By: jleslee <jleslee@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/07 16:37:05 by jkasper           #+#    #+#             */
-/*   Updated: 2022/04/08 17:37:15 by jkasper          ###   ########.fr       */
+/*   Created: 2022/03/07 16:37:05 by jleslee           #+#    #+#             */
+/*   Updated: 2022/04/08 17:37:15 by jleslee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

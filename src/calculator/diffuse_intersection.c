@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   diffuse_intersection.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mhahn <mhahn@student.42heilbronn.de>       +#+  +:+       +#+        */
+/*   By: jleslee <jleslee@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/26 17:17:00 by mhahn             #+#    #+#             */
-/*   Updated: 2022/04/26 17:17:02 by mhahn            ###   ########.fr       */
+/*   Created: 2022/04/26 17:17:00 by jleslee           #+#    #+#             */
+/*   Updated: 2022/04/26 17:17:02 by jleslee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

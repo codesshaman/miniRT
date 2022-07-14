@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   vector_division.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkasper <jkasper@student.42Heilbronn.de    +#+  +:+       +#+        */
+/*   By: jleslee <jleslee@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/07 16:38:15 by jkasper           #+#    #+#             */
-/*   Updated: 2022/03/10 17:55:09 by jkasper          ###   ########.fr       */
+/*   Created: 2022/03/07 16:38:15 by jleslee           #+#    #+#             */
+/*   Updated: 2022/03/10 17:55:09 by jleslee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

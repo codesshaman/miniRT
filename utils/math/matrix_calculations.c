@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   matrix_calculations.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkasper <jkasper@student.42Heilbronn.de    +#+  +:+       +#+        */
+/*   By: jleslee <jleslee@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/07 16:37:48 by jkasper           #+#    #+#             */
-/*   Updated: 2022/03/09 20:43:07 by mhahn            ###   ########.fr       */
+/*   Created: 2022/03/07 16:37:48 by jleslee           #+#    #+#             */
+/*   Updated: 2022/03/09 20:43:07 by jleslee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

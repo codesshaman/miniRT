@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   calculator.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkasper <jkasper@student.42Heilbronn.de    +#+  +:+       +#+        */
+/*   By: jleslee <jleslee@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/10 21:42:53 by jkasper           #+#    #+#             */
-/*   Updated: 2022/04/20 14:22:37 by jkasper          ###   ########.fr       */
+/*   Created: 2022/03/10 21:42:53 by jleslee           #+#    #+#             */
+/*   Updated: 2022/04/20 14:22:37 by jleslee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

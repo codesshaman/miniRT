@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   matrix_filler.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkasper <jkasper@student.42Heilbronn.de    +#+  +:+       +#+        */
+/*   By: jleslee <jleslee@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/07 16:37:54 by jkasper           #+#    #+#             */
-/*   Updated: 2022/03/07 16:37:55 by jkasper          ###   ########.fr       */
+/*   Created: 2022/03/07 16:37:54 by jleslee           #+#    #+#             */
+/*   Updated: 2022/03/07 16:37:55 by jleslee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

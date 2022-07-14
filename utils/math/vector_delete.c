@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   vector_delete.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkasper <jkasper@student.42Heilbronn.de    +#+  +:+       +#+        */
+/*   By: jleslee <jleslee@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/07 16:38:12 by jkasper           #+#    #+#             */
-/*   Updated: 2022/04/08 17:35:25 by jkasper          ###   ########.fr       */
+/*   Created: 2022/03/07 16:38:12 by jleslee           #+#    #+#             */
+/*   Updated: 2022/04/08 17:35:25 by jleslee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

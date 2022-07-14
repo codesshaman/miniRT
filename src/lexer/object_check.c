@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   object_check.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkasper <jkasper@student.42Heilbronn.de    +#+  +:+       +#+        */
+/*   By: jleslee <jleslee@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/10 15:42:30 by jkasper           #+#    #+#             */
-/*   Updated: 2022/03/31 16:09:55 by jkasper          ###   ########.fr       */
+/*   Created: 2022/03/10 15:42:30 by jleslee           #+#    #+#             */
+/*   Updated: 2022/03/31 16:09:55 by jleslee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

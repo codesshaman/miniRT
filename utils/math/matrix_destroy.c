@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   matrix_destroy.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkasper <jkasper@student.42Heilbronn.de    +#+  +:+       +#+        */
+/*   By: jleslee <jleslee@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/07 16:37:51 by jkasper           #+#    #+#             */
-/*   Updated: 2022/04/08 17:35:35 by jkasper          ###   ########.fr       */
+/*   Created: 2022/03/07 16:37:51 by jleslee           #+#    #+#             */
+/*   Updated: 2022/04/08 17:35:35 by jleslee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
