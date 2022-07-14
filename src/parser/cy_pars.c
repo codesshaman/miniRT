@@ -37,10 +37,10 @@ int	add_cy_caps(char **line, t_mixer *m_data, bool bottom)
 	cur->next->position = get_vector(line[1]);
 	cur->next->normal = get_vector(line[2]);
 	vector_normalize(&(cur->next->normal));
-	cur->next->height = ft_atof(line[3]);
-	cur->next->width = ft_atof(line[4]);
-	cur->next->diffusion = ft_atof(line[5]);
-	cur->next->reflec_fac = ft_atof(line[6]);
+	cur->next->height = atoff(line[3]);
+	cur->next->width = atoff(line[4]);
+	cur->next->diffusion = atoff(line[5]);
+	cur->next->reflec_fac = atoff(line[6]);
 	cur->next->color = get_color(line[7]);
 	cur->next->obj_type = CYLINDER_CAP;
 	if (bottom)
@@ -66,10 +66,10 @@ int	add_cy_mant(char **line, t_mixer *m_data)
 	curr->next->position = get_vector(line[1]);
 	curr->next->normal = get_vector(line[2]);
 	vector_normalize(&(curr->next->normal));
-	curr->next->height = ft_atof(line[3]);
-	curr->next->width = ft_atof(line[4]);
-	curr->next->diffusion = ft_atof(line[5]);
-	curr->next->reflec_fac = ft_atof(line[6]);
+	curr->next->height = atoff(line[3]);
+	curr->next->width = atoff(line[4]);
+	curr->next->diffusion = atoff(line[5]);
+	curr->next->reflec_fac = atoff(line[6]);
 	curr->next->color = get_color(line[7]);
 	curr->next->obj_type = CYLINDER_MAN;
 	curr->next->next = NULL;

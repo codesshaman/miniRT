@@ -22,15 +22,15 @@ t_matrix	*matrix_new(
 	t_matrix		*ret;
 	unsigned int	i;
 
-	ret = ft_gc_malloc(sizeof(struct s_matrix));
+	ret = gc_malloc(sizeof(struct s_matrix));
 	if (ret == NULL)
 		return (NULL);
 	if (matrix == NULL)
 	{
-		matrix = ft_gc_malloc(rows * sizeof(float *));
+		matrix = gc_malloc(rows * sizeof(float *));
 		i = 0;
 		while (i < rows)
-			matrix[i++] = ft_gc_malloc(columns * sizeof(float));
+			matrix[i++] = gc_malloc(columns * sizeof(float));
 		if (matrix == NULL)
 			return (NULL);
 	}

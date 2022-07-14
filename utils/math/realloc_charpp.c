@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_realloc_charpp.c                                :+:      :+:    :+:   */
+/*   realloc_charpp.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkasper <jkasper@student.42Heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -20,15 +20,15 @@ void	*freetili(char **arr)
 	i = 0;
 	while (arr != NULL && arr[i] != NULL)
 	{
-		ft_gc_free(arr[i]);
+		gc_free(arr[i]);
 		i++;
 	}
 	if (arr != NULL)
-		ft_gc_free(arr);
+		gc_free(arr);
 	return (NULL);
 }
 
-char	**ft_realloc_charpp(char **old, size_t new_size)
+char	**realloc_charpp(char **old, size_t new_size)
 {
 	char	**new;
 	int		i;

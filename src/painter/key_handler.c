@@ -22,10 +22,10 @@ static inline void	free_cam_vecs(t_mixer *self)
 	i = 0;
 	while (i < self->res_y)
 	{
-		ft_gc_free(self->cam.vecs[i]);
+		gc_free(self->cam.vecs[i]);
 		i++;
 	}
-	ft_gc_free(self->cam.vecs);
+	gc_free(self->cam.vecs);
 }
 
 void	key_escape(t_mixer *p_null)
@@ -39,14 +39,14 @@ void	key_escape(t_mixer *p_null)
 	while (tmp != NULL)
 	{
 		tmp2 = tmp->next;
-		ft_gc_free(tmp);
+		gc_free(tmp);
 		tmp = tmp2;
 	}
-	ft_gc_free(p_null->col_sum.sum);
-	ft_gc_free(p_null->col_sum.fac);
+	gc_free(p_null->col_sum.sum);
+	gc_free(p_null->col_sum.fac);
 	free_cam_vecs(p_null);
-	ft_gc_free(p_null);
-	ft_gc_exit(0);
+	gc_free(p_null);
+	gc_exit(0);
 }
 
 int	key_handler(int key, t_mixer *p_null)

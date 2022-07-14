@@ -18,7 +18,7 @@ t_vertex3d	*vertex3d_new(float x, float y, float z)
 {
 	t_vertex3d	*ret;
 
-	ret = ft_gc_malloc(sizeof(struct s_vertex3d));
+	ret = gc_malloc(sizeof(struct s_vertex3d));
 	if (ret != NULL)
 		vertex3d_create(ret, x, y, z);
 	return (ret);
@@ -49,5 +49,5 @@ void	vertex3d_delete(t_vertex3d *this)
 {
 	vertex3d_destroy(this);
 	if (this != NULL)
-		ft_gc_free(this);
+		gc_free(this);
 }

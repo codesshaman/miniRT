@@ -44,7 +44,7 @@ int	read_to_buffer(int fd, char ***alloc, int *size)
 		i++;
 		if (i == LEXER_BUFFER * buff_time)
 		{
-			buff = ft_realloc_charpp(buff, (LEXER_BUFFER * ++buff_time) + 1);
+			buff = realloc_charpp(buff, (LEXER_BUFFER * ++buff_time) + 1);
 			if (buff == NULL)
 				return (3);
 		}

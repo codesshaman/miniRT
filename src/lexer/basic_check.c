@@ -36,19 +36,19 @@ int	check_orientation(char *str)
 	int	i;
 
 	i = 0;
-	if (ft_atof(str + i) < -1 || ft_atof(str + i) > 1)
+	if (atoff(str + i) < -1 || atoff(str + i) > 1)
 		return (1);
 	if (check_vec_float(str, &i))
 		return (1);
 	if (str[i++] != ',')
 		return (1);
-	if (ft_atof(str + i) < -1 || ft_atof(str + i) > 1)
+	if (atoff(str + i) < -1 || atoff(str + i) > 1)
 		return (1);
 	if (check_vec_float(str, &i))
 		return (1);
 	if (str[i++] != ',')
 		return (1);
-	if (ft_atof(str + i) < -1 || ft_atof(str + i) > 1)
+	if (atoff(str + i) < -1 || atoff(str + i) > 1)
 		return (1);
 	if (check_vec_float(str, &i))
 		return (1);

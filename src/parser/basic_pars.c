@@ -42,12 +42,12 @@ t_vector	get_vector(char *src)
 	int			i;
 
 	i = 0;
-	vec.x = ft_atof(src);
+	vec.x = atoff(src);
 	while (src[i] != ',')
 		i++;
-	vec.y = ft_atof(src + ++i);
+	vec.y = atoff(src + ++i);
 	while (src[i] != ',')
 		i++;
-	vec.z = ft_atof(src + ++i);
+	vec.z = atoff(src + ++i);
 	return (vec);
 }

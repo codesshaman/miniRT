@@ -95,13 +95,13 @@ int	add_cube_plane(char **line, t_mixer *m_data, int side)
 	curr->emitter = false;
 	curr->cube_side = side;
 	determine_normal(get_vector(line[2]), get_vector(line[3]), side, curr);
-	curr->height = ft_atof(line[4]);
-	curr->width = ft_atof(line[5]);
-	curr->depth = ft_atof(line[6]);
+	curr->height = atoff(line[4]);
+	curr->width = atoff(line[5]);
+	curr->depth = atoff(line[6]);
 	curr->position = determine_position(curr, get_vector(line[1]), side);
-	curr->diffusion = ft_atof(line[7]);
-	curr->reflec_fac = ft_atof(line[8]);
-	if (ft_char_arr_len(line) < 15)
+	curr->diffusion = atoff(line[7]);
+	curr->reflec_fac = atoff(line[8]);
+	if (char_arr_len(line) < 15)
 		curr->color = get_color(line[9]);
 	else
 		curr->color = get_color(line[9 + side]);
@@ -123,6 +123,6 @@ int	add_cube(char **line, t_mixer *m_data)
 		return (3);
 	if (add_cube_plane(line, m_data, 5))
 		return (3);
-	ft_free_char_arr(line);
+	free_char_arr(line);
 	return (0);
 }

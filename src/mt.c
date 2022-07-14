@@ -25,10 +25,10 @@ void	rt_cleaner(t_mixer *self)
 	i = 0;
 	while (i < tiles_per_axis)
 	{
-		ft_gc_free(self->tile_array[i]);
+		gc_free(self->tile_array[i]);
 		i++;
 	}
-	ft_gc_free(self->tile_array);
+	gc_free(self->tile_array);
 	self->tile_array = NULL;
 	i = 0;
 	while (i < self->cores)
@@ -36,7 +36,7 @@ void	rt_cleaner(t_mixer *self)
 		free_mixer_copy(self->threads[i].mixer);
 		i++;
 	}
-	ft_gc_free(self->threads);
+	gc_free(self->threads);
 	self->threads = NULL;
 }
 
@@ -63,7 +63,7 @@ void	rt_forker(t_mixer *mixer)
 	size_t	ii;
 
 	mixer->cores = sysconf(_SC_NPROCESSORS_CONF);
-	mixer->threads = ft_gc_malloc(sizeof(t_thread) * mixer->cores);
+	mixer->threads = gc_malloc(sizeof(t_thread) * mixer->cores);
 	printf("Using %zu threads to render the scene...\n", mixer->cores);
 	printf("\033[?25l       ");
 	i = 0;
@@ -89,12 +89,12 @@ t_tile	**rt_divide(float aspect, t_mixer *mixer)
 	size_t	ii;
 
 	tiles_per_axis = ceil((double) mixer->res_y / BLOCK_SIZE);
-	ret = ft_gc_malloc(tiles_per_axis * sizeof(void *));
+	ret = gc_malloc(tiles_per_axis * sizeof(void *));
 	i = 0;
 	while (i < tiles_per_axis)
 	{
 		ii = 0;
-		ret[i] = ft_gc_malloc(tiles_per_axis * sizeof(t_tile));
+		ret[i] = gc_malloc(tiles_per_axis * sizeof(t_tile));
 		while (ii < tiles_per_axis)
 		{
 			ret[i][ii].y = i * BLOCK_SIZE;

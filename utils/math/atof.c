@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atof.c                                          :+:      :+:    :+:   */
+/*   atoff.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkasper <jkasper@student.42Heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static int	ft_skipspaces(char *str, int *count)
+static int	skipspaces(char *str, int *count)
 {
 	int	i;
 
@@ -75,14 +75,14 @@ static float	atofloop(char *str, int i, int ii, int sw)
 	return (ret);
 }
 
-float	ft_atof(char *str)
+float	atoff(char *str)
 {
 	int		i;
 	int		min;
 	float	ret;
 
 	i = 0;
-	min = ft_skipspaces(str, &i);
+	min = skipspaces(str, &i);
 	if (min == -1)
 		return (0);
 	ret = atofloop(str, i, 0, 0);

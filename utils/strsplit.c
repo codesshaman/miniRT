@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*   strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkasper <jkasper@student.42Heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -20,10 +20,10 @@ static char	**ft_freeman(char **restr, size_t count)
 	i = count;
 	while (restr[i] != NULL)
 	{
-		ft_gc_free(restr[i]);
+		gc_free(restr[i]);
 		i++;
 	}
-	ft_gc_free(restr);
+	gc_free(restr);
 	return (NULL);
 }
 
@@ -50,11 +50,11 @@ static char	**ft_recsplit(char *s, char *c, size_t count)
 	char	**rs;
 
 	i = 0;
-	ft_skip_s(s, c, &i);
+	skip_s(s, c, &i);
 	ii = i;
-	ft_skip_c(s, c, &ii);
+	skip_c(s, c, &ii);
 	count++;
-	if (i >= ft_skip(s) || ii >= ft_skip(s))
+	if (i >= skip(s) || ii >= skip(s))
 	{
 		rs = ft_callsplit(s, count, i, ii);
 		if (rs == NULL)
@@ -70,7 +70,7 @@ static char	**ft_recsplit(char *s, char *c, size_t count)
 	return (rs);
 }
 
-char	**ft_strsplit(char const *s, char *c)
+char	**strsplit(char const *s, char *c)
 {
 	if (s == NULL)
 		return (NULL);

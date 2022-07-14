@@ -59,11 +59,11 @@ void	build_rays(t_mixer *mixer, t_vector s)
 	size_t		i;
 	size_t		ii;
 
-	mixer->cam.vecs = ft_gc_malloc(mixer->res_y * sizeof(t_vector *));
+	mixer->cam.vecs = gc_malloc(mixer->res_y * sizeof(t_vector *));
 	i = 0;
 	while (i < mixer->res_y)
 	{
-		mixer->cam.vecs[i] = ft_gc_malloc(mixer->res_x * sizeof(t_vector));
+		mixer->cam.vecs[i] = gc_malloc(mixer->res_x * sizeof(t_vector));
 		ii = 0;
 		while (ii < mixer->res_x)
 		{

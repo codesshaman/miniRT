@@ -27,7 +27,7 @@ t_renderer_image	*renderer_image_new(
 
 	if (mlx_ptr == NULL)
 		return (NULL);
-	ret = ft_gc_malloc(sizeof(struct s_renderer_image));
+	ret = gc_malloc(sizeof(struct s_renderer_image));
 	if (ret == NULL)
 		return (NULL);
 	ret->mlx_img = mlx_new_image(mlx_ptr, (int) width, (int) height);
@@ -66,5 +66,5 @@ void	renderer_image_delete(t_renderer_image *this)
 	if (this == NULL)
 		return ;
 	renderer_image_destroy(this);
-	ft_gc_free(this);
+	gc_free(this);
 }

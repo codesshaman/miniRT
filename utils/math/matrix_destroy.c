@@ -29,11 +29,11 @@ void	matrix_delete(t_matrix *this)
 			i = 0;
 			while (i < this->rows)
 			{
-				ft_gc_free(this->values[i]);
+				gc_free(this->values[i]);
 				i++;
 			}
-			ft_gc_free(this->values);
+			gc_free(this->values);
 		}
-		ft_gc_free(this);
+		gc_free(this);
 	}
 }

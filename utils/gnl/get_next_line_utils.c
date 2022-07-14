@@ -48,7 +48,7 @@ bool	read_line(t_string_builder **builder, int fd)
 		ret = read(fd, tmp->part, GNL_BUFFER);
 		if (ret <= 0)
 		{
-			ft_gc_free(tmp);
+			gc_free(tmp);
 			if (ret < 0)
 				return (false);
 			break ;

@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+
+
 #ifndef ABS_H
 # define ABS_H
 #include "libft.h"
@@ -20,18 +22,18 @@
  * value. If the given number is the smallest possible number, the given number
  * is simply returned.
  */
-void	ft_gc_exit(int code);
+void	gc_exit(int code);
 
 /*
  * Returns the absolute value of the given int. Always returns a positive
  * value. If the given number is the smallest possible number, the given number
  * is simply returned.
  */
-void	ft_gc_free(void *ptr);
-void	*ft_gc_malloc(size_t size);
-char	**ft_strsplit(char const *s, char *c);
-void	ft_skip_c(char *s, char *c, size_t *count);
-void	ft_skip_s(char *s, char *c, size_t *count);
-size_t	ft_skip(const char *s);
+void	gc_free(void *ptr);
+void	*gc_malloc(size_t size);
+char	**strsplit(char const *s, char *c);
+void	skip_c(char *s, char *c, size_t *count);
+void	skip_s(char *s, char *c, size_t *count);
+size_t	skip(const char *s);
 
 #endif

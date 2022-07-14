@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atol.c                                          :+:      :+:    :+:   */
+/*   atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkasper <jkasper@student.42Heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -33,7 +33,7 @@ static int	ft_checkinfront(const char *str)
 	return (i);
 }
 
-long	ft_atol(const char *str)
+long	atol(const char *str)
 {
 	long	i;
 	long	reval;

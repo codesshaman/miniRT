@@ -36,7 +36,7 @@ static t_arraylist	**ft_gc_list(void)
 	return (&list);
 }
 
-void	*ft_gc_malloc(size_t size)
+void	*gc_malloc(size_t size)
 {
 	void	*ret;
 
@@ -57,7 +57,7 @@ void	*ft_gc_malloc(size_t size)
 	return (ret);
 }
 
-void	ft_gc_free(void *ptr)
+void	gc_free(void *ptr)
 {
 	t_arraylist	*findus;
 
@@ -67,7 +67,7 @@ void	ft_gc_free(void *ptr)
 	pthread_mutex_unlock(ft_gc_mutex());
 }
 
-void	ft_gc_exit(int code)
+void	gc_exit(int code)
 {
 	size_t	leak_count;
 

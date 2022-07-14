@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsplit2.c                                     :+:      :+:    :+:   */
+/*   strsplit2.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jkasper <jkasper@student.42Heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -14,7 +14,7 @@
 #include "libft.h"
 #include "gc.h"
 
-void	ft_skip_c(char *s, char *c, size_t *count)
+void	skip_c(char *s, char *c, size_t *count)
 {
 	size_t	i;
 	size_t	ii;
@@ -36,7 +36,7 @@ void	ft_skip_c(char *s, char *c, size_t *count)
 	*count = i;
 }
 
-void	ft_skip_s(char *s, char *c, size_t *count)
+void	skip_s(char *s, char *c, size_t *count)
 {
 	size_t	i;
 	size_t	ii;
@@ -58,7 +58,7 @@ void	ft_skip_s(char *s, char *c, size_t *count)
 	*count = i;
 }
 
-size_t	ft_skip(const char *s)
+size_t	skip(const char *s)
 {
 	size_t	i;
 
@@ -68,7 +68,7 @@ size_t	ft_skip(const char *s)
 	return (i);
 }
 
-void	ft_free_char_arr(char **arr)
+void	free_char_arr(char **arr)
 {
 	int	i;
 
@@ -77,14 +77,14 @@ void	ft_free_char_arr(char **arr)
 		return ;
 	while (arr[i] != NULL)
 	{
-		ft_gc_free(arr[i]);
+		gc_free(arr[i]);
 		arr[i] = NULL;
 		i++;
 	}
-	ft_gc_free(arr);
+	gc_free(arr);
 }
 
-int	ft_char_arr_len(char **arr)
+int	char_arr_len(char **arr)
 {
 	int	i;
 

@@ -75,8 +75,8 @@ inline void	set_res(t_mixer *self, char *width, char *height)
 		print_error_cli("--resolution");
 		return ;
 	}
-	tmp_x = ft_atol(width);
-	tmp_y = ft_atol(height);
+	tmp_x = atol(width);
+	tmp_y = atol(height);
 	if (tmp_x <= 0 || tmp_y <= 0)
 		print_error_cli("--resolution");
 	else

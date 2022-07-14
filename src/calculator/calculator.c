@@ -67,7 +67,7 @@ t_rgbof	calc_first_ray_of_the_day(t_mixer *mixer, t_vector *cam_vec)
 	if (mixer->col_sum.fac != NULL)
 		color_sum = mixer->col_sum;
 	else
-		ft_gc_exit(1);
+		gc_exit(1);
 	inter = *cam_vec;
 	vector_normalize(&inter);
 	mixer->bounces = 0;

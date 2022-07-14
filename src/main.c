@@ -30,7 +30,7 @@ static void	print_lexer_error(int error)
 		ft_putendl_fd("At least one required object missing", 1);
 	else
 		ft_putendl_fd("Error while parsing", 1);
-	ft_gc_exit(error);
+	gc_exit(error);
 }
 
 static void	print_error(int error)
@@ -38,7 +38,7 @@ static void	print_error(int error)
 	if (!error)
 		return ;
 	else if (error == 2000)
-		ft_gc_exit(0);
+		gc_exit(0);
 	ft_putendl_fd("Error", 1);
 	if (error >= 30)
 		ft_putendl_fd("execution failed", 1);
@@ -50,7 +50,7 @@ static void	print_error(int error)
 		ft_putendl_fd("Memory allocation failed", 1);
 	else
 		ft_putendl_fd("Unknown error occurred", 1);
-	ft_gc_exit(error);
+	gc_exit(error);
 }
 
 static void	open_mlx(t_mixer *all_struct)

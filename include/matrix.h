@@ -134,10 +134,10 @@ void		matrix_destroy(t_matrix *this);
  * given matrix object. Does nothing if no object is given.
  */
 void		matrix_delete(t_matrix *this);
-long		ft_atol(const char *str);
-float		ft_atof(char *str);
-char		**ft_realloc_charpp(char **old, size_t new_size);
-int			ft_char_arr_len(char **arr);
-void		ft_free_char_arr(char **arr);
+long		atol(const char *str);
+float		atoff(char *str);
+char		**realloc_charpp(char **old, size_t new_size);
+int			char_arr_len(char **arr);
+void		free_char_arr(char **arr);
 
 #endif

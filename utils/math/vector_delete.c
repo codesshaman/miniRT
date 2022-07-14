@@ -20,5 +20,5 @@ void	vector_destroy(t_vector __attribute__((unused)) *this)
 void	vector_delete(t_vector *this)
 {
 	if (this != NULL)
-		ft_gc_free(this);
+		gc_free(this);
 }

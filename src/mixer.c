@@ -44,7 +44,7 @@ inline void	set_antialiasing(t_mixer *self, char *factor)
 		print_error_cli("--antialiasing");
 		return ;
 	}
-	fac = ft_atol(factor);
+	fac = atol(factor);
 	if (fac < 0)
 		print_error_cli("--antialiasing");
 	else
@@ -70,7 +70,7 @@ t_mixer	*init_mainstruct(int *err)
 {
 	t_mixer	*ret;
 
-	ret = ft_gc_malloc(sizeof(struct s_mixer));
+	ret = gc_malloc(sizeof(struct s_mixer));
 	if (ret == NULL)
 	{
 		*err = 3;

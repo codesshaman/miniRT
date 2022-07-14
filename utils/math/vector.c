@@ -19,7 +19,7 @@ t_vector	*vector_new(float x, float y, float z)
 {
 	t_vector	*ret;
 
-	ret = ft_gc_malloc(sizeof(struct s_vector));
+	ret = gc_malloc(sizeof(struct s_vector));
 	if (ret != NULL)
 		vector_create(ret, x, y, z);
 	return (ret);

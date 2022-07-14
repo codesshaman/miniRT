@@ -17,7 +17,7 @@ t_point	*point_new(long x, long y)
 {
 	t_point	*ret;
 
-	ret = ft_gc_malloc(sizeof(struct s_point));
+	ret = gc_malloc(sizeof(struct s_point));
 	if (ret == NULL)
 		return (NULL);
 	point_create(ret, x, y);
@@ -45,5 +45,5 @@ void	point_delete(t_point *this)
 {
 	if (this == NULL)
 		return ;
-	ft_gc_free(this);
+	gc_free(this);
 }
