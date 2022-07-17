@@ -3,20 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   validator.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkasper <jkasper@student.42Heilbronn.de    +#+  +:+       +#+        */
+/*   By: jleslee <jleslee@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/08 16:39:55 by jkasper           #+#    #+#             */
-/*   Updated: 2022/04/13 15:03:39 by mhahn            ###   ########.fr       */
+/*   Created: 2022/03/08 16:39:55 by jleslee           #+#    #+#             */
+/*   Updated: 2022/04/13 15:03:39 by jleslee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
 #include "libft.h"
 #include "lexer.h"
+#include "matrix.h"
+#include "gc.h"
 
 int	check_camera(char **splitline)
 {
-	if (ft_char_arr_len(splitline) < 5)
+	if (char_arr_len(splitline) < 5)
 		return (1);
 	if (check_vector(splitline[1]))
 		return (1);
@@ -31,11 +33,11 @@ int	check_camera(char **splitline)
 
 int	check_ambient(char **splitline)
 {
-	if (ft_char_arr_len(splitline) < 3)
+	if (char_arr_len(splitline) < 3)
 		return (1);
 	if (check_float(splitline[1]))
 		return (1);
-	if (ft_atof(splitline[1]) < 0 || ft_atof(splitline[1]) > 1)
+	if (atoff(splitline[1]) < 0 || atoff(splitline[1]) > 1)
 		return (1);
 	if (check_rgb(splitline[2]))
 		return (1);
@@ -44,13 +46,13 @@ int	check_ambient(char **splitline)
 
 int	check_light(char **splitline)
 {
-	if (ft_char_arr_len(splitline) < 4)
+	if (char_arr_len(splitline) < 4)
 		return (1);
 	if (check_vector(splitline[1]))
 		return (1);
 	if (check_float(splitline[2]))
 		return (1);
-	if (ft_atof(splitline[2]) < 0 || ft_atof(splitline[2]) > 1)
+	if (atoff(splitline[2]) < 0 || atoff(splitline[2]) > 1)
 		return (1);
 	if (check_rgb(splitline[3]))
 		return (1);
@@ -90,12 +92,12 @@ int	validation_check(char **buffer, int size)
 	i = 0;
 	while (i < size && !ret)
 	{
-		splitline = ft_strsplit(buffer[i++], " 	");
+		splitline = strsplit(buffer[i++], " 	");
 		if (!ft_strncmp(splitline[0], "#", 1))
 			ret = 0;
 		else
 			validation_p2(splitline, &ret);
-		ft_free_char_arr(splitline);
+		free_char_arr(splitline);
 	}
 	return (ret);
 }

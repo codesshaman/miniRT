@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   baseimage.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkasper <jkasper@student.42Heilbronn.de    +#+  +:+       +#+        */
+/*   By: jleslee <jleslee@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/15 20:23:59 by jkasper           #+#    #+#             */
-/*   Updated: 2022/04/20 14:20:34 by jkasper          ###   ########.fr       */
+/*   Created: 2022/03/15 20:23:59 by jleslee           #+#    #+#             */
+/*   Updated: 2022/04/20 14:20:34 by jleslee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

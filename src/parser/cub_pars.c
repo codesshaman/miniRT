@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   cub_pars.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mhahn <mhahn@student.42heilbronn.de>       +#+  +:+       +#+        */
+/*   By: jleslee <jleslee@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/26 17:31:23 by jkasper           #+#    #+#             */
-/*   Updated: 2022/04/26 17:31:24 by jkasper          ###   ########.fr       */
+/*   Created: 2022/04/26 17:31:23 by jleslee           #+#    #+#             */
+/*   Updated: 2022/04/26 17:31:24 by jleslee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
 #include "libft.h"
 #include "parser.h"
+#include "matrix.h"
 
 //side: 0 top, 1 bottom, 2 left, 3 right, 4 front, 5 back
 t_vector	determine_position(t_obj_l *self, t_vector vec, int side)
@@ -94,13 +95,13 @@ int	add_cube_plane(char **line, t_mixer *m_data, int side)
 	curr->emitter = false;
 	curr->cube_side = side;
 	determine_normal(get_vector(line[2]), get_vector(line[3]), side, curr);
-	curr->height = ft_atof(line[4]);
-	curr->width = ft_atof(line[5]);
-	curr->depth = ft_atof(line[6]);
+	curr->height = atoff(line[4]);
+	curr->width = atoff(line[5]);
+	curr->depth = atoff(line[6]);
 	curr->position = determine_position(curr, get_vector(line[1]), side);
-	curr->diffusion = ft_atof(line[7]);
-	curr->reflec_fac = ft_atof(line[8]);
-	if (ft_char_arr_len(line) < 15)
+	curr->diffusion = atoff(line[7]);
+	curr->reflec_fac = atoff(line[8]);
+	if (char_arr_len(line) < 15)
 		curr->color = get_color(line[9]);
 	else
 		curr->color = get_color(line[9 + side]);
@@ -122,6 +123,6 @@ int	add_cube(char **line, t_mixer *m_data)
 		return (3);
 	if (add_cube_plane(line, m_data, 5))
 		return (3);
-	ft_free_char_arr(line);
+	free_char_arr(line);
 	return (0);
 }

@@ -3,38 +3,50 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkasper <jkasper@student.42Heilbronn.de    +#+  +:+       +#+        */
+/*   By: jleslee <jleslee@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/15 19:02:11 by jkasper           #+#    #+#             */
-/*   Updated: 2021/06/20 18:36:46 by jkasper          ###   ########.fr       */
+/*   Created: 2021/10/10 19:42:44 by jleslee           #+#    #+#             */
+/*   Updated: 2021/10/26 21:18:23 by jleslee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+//******************Part I******************//
+
 #include "libft.h"
+//#include <stdio.h>
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+// Копирует n бит из src в dest
+// Которые могут пересекаться
+
+void	*ft_memmove(void *dest, const void *src, size_t len)
 {
-	size_t	i;
+	unsigned char	*d;
+	unsigned char	*s;
 
-	if (dst == NULL && src == NULL)
-		return (dst);
-	if (src < dst)
-	{
-		i = len;
-		while (i > 0)
-		{
-			((unsigned char *)dst)[i - 1] = ((unsigned char *)src)[i - 1];
-			i--;
-		}
-	}
+	d = (unsigned char *)dest;
+	s = (unsigned char *)src;
+	if (dest == NULL && src == NULL)
+		return (NULL);
+	if (d < s)
+		while (len--)
+			*d++ = *s++;
 	else
 	{
-		i = 0;
-		while (i < len)
-		{
-			((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
-			i++;
-		}
+		d += len;
+		s += len;
+		while (len--)
+			*--d = *--s;
 	}
-	return (dst);
+	return (dest);
 }
+
+// int main(int argc, char *argv[]){
+// 	if(argc > 0){
+// 		char src[7] = "src_str";
+// 		char dst[7] = "dst_str";
+// 		ft_memmove(dst, src, (size_t)3);
+// 		printf("%s", dst);
+// 		printf("%c", '\n');
+// 	}
+// 	return (0);
+// }

@@ -3,14 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkasper <jkasper@student.42Heilbronn.de    +#+  +:+       +#+        */
+/*   By: jleslee <jleslee@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/17 14:06:11 by jkasper           #+#    #+#             */
-/*   Updated: 2021/06/19 16:05:20 by jkasper          ###   ########.fr       */
+/*   Created: 2021/10/10 09:42:09 by jleslee           #+#    #+#             */
+/*   Updated: 2021/10/26 21:03:09 by jleslee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+//******************Part I******************//
+
 #include "libft.h"
+//#include <stdio.h>
+
+// Возвращаем 1, если передано
+// Число, иначе возвращаем 0
 
 int	ft_isdigit(int c)
 {
@@ -18,3 +24,12 @@ int	ft_isdigit(int c)
 		return (1);
 	return (0);
 }
+
+// int main(int argc, char *argv[]){
+// 	if(argc > 0){
+// 		int i = '0';
+// 		printf("%d", ft_isdigit(i));
+// 		printf("%c", '\n');
+// 	}
+// 	return (0);
+// }

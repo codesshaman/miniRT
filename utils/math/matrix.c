@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   matrix.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkasper <jkasper@student.42Heilbronn.de    +#+  +:+       +#+        */
+/*   By: jleslee <jleslee@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/07 16:38:03 by jkasper           #+#    #+#             */
-/*   Updated: 2022/04/08 17:32:56 by mhahn            ###   ########.fr       */
+/*   Created: 2022/03/07 16:38:03 by jleslee           #+#    #+#             */
+/*   Updated: 2022/04/08 17:32:56 by jleslee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "matrix.h"
 #include "vertex.h"
+#include "gc.h"
 
 t_matrix	*matrix_new(
 				float **matrix,
@@ -21,15 +22,15 @@ t_matrix	*matrix_new(
 	t_matrix		*ret;
 	unsigned int	i;
 
-	ret = ft_gc_malloc(sizeof(struct s_matrix));
+	ret = gc_malloc(sizeof(struct s_matrix));
 	if (ret == NULL)
 		return (NULL);
 	if (matrix == NULL)
 	{
-		matrix = ft_gc_malloc(rows * sizeof(float *));
+		matrix = gc_malloc(rows * sizeof(float *));
 		i = 0;
 		while (i < rows)
-			matrix[i++] = ft_gc_malloc(columns * sizeof(float));
+			matrix[i++] = gc_malloc(columns * sizeof(float));
 		if (matrix == NULL)
 			return (NULL);
 	}

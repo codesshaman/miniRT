@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   hex_str_to_unsigned_int.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkasper <jkasper@student.42Heilbronn.de    +#+  +:+       +#+        */
+/*   By: jleslee <jleslee@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/07 16:37:07 by jkasper           #+#    #+#             */
-/*   Updated: 2022/03/07 16:37:09 by jkasper          ###   ########.fr       */
+/*   Created: 2022/03/07 16:37:07 by jleslee           #+#    #+#             */
+/*   Updated: 2022/03/07 16:37:09 by jleslee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

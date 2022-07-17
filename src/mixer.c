@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mixer.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkasper <jkasper@student.42Heilbronn.de    +#+  +:+       +#+        */
+/*   By: jleslee <jleslee@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/09 19:51:25 by mhahn             #+#    #+#             */
-/*   Updated: 2022/04/08 17:29:59 by mhahn            ###   ########.fr       */
+/*   Created: 2022/03/09 19:51:25 by jleslee           #+#    #+#             */
+/*   Updated: 2022/04/08 17:29:59 by jleslee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 
 #include "minirt.h"
 #include "mlx.h"
+#include "gc.h"
 #include "renderer_image.h"
+#include "matrix.h"
+#include "libft.h"
 
 inline void	set_max_bounces(t_mixer *self, char *bounces)
 {
@@ -41,7 +44,7 @@ inline void	set_antialiasing(t_mixer *self, char *factor)
 		print_error_cli("--antialiasing");
 		return ;
 	}
-	fac = ft_atol(factor);
+	fac = atol(factor);
 	if (fac < 0)
 		print_error_cli("--antialiasing");
 	else
@@ -67,7 +70,7 @@ t_mixer	*init_mainstruct(int *err)
 {
 	t_mixer	*ret;
 
-	ret = ft_gc_malloc(sizeof(struct s_mixer));
+	ret = gc_malloc(sizeof(struct s_mixer));
 	if (ret == NULL)
 	{
 		*err = 3;

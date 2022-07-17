@@ -3,17 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkasper <jkasper@student.42Heilbronn.de    +#+  +:+       +#+        */
+/*   By: jleslee <jleslee@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/22 20:18:41 by jkasper           #+#    #+#             */
-/*   Updated: 2022/04/08 17:43:00 by jkasper          ###   ########.fr       */
+/*   Created: 2021/10/26 13:24:47 by jleslee           #+#    #+#             */
+/*   Updated: 2021/10/26 13:42:31 by jleslee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+//******************Bonus Part******************//
+
 #include "libft.h"
+
+// Удаляет элемент списка и очищает память
 
 void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
+	if (lst == NULL || del == NULL)
+		return ;
 	del(lst->content);
-	ft_gc_free(lst);
+	free(lst);
+	lst = NULL;
 }

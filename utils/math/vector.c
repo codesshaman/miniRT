@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   vector.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkasper <jkasper@student.42Heilbronn.de    +#+  +:+       +#+        */
+/*   By: jleslee <jleslee@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/07 16:38:20 by jkasper           #+#    #+#             */
-/*   Updated: 2022/04/08 17:33:55 by jkasper          ###   ########.fr       */
+/*   Created: 2022/03/07 16:38:20 by jleslee           #+#    #+#             */
+/*   Updated: 2022/04/08 17:33:55 by jleslee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <math.h>
 #include <stdio.h>
-
 #include "vector.h"
+#include "gc.h"
 
 t_vector	*vector_new(float x, float y, float z)
 {
 	t_vector	*ret;
 
-	ret = ft_gc_malloc(sizeof(struct s_vector));
+	ret = gc_malloc(sizeof(struct s_vector));
 	if (ret != NULL)
 		vector_create(ret, x, y, z);
 	return (ret);

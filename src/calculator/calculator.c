@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   calculator.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkasper <jkasper@student.42Heilbronn.de    +#+  +:+       +#+        */
+/*   By: jleslee <jleslee@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/10 21:42:53 by jkasper           #+#    #+#             */
-/*   Updated: 2022/04/20 14:22:37 by jkasper          ###   ########.fr       */
+/*   Created: 2022/03/10 21:42:53 by jleslee           #+#    #+#             */
+/*   Updated: 2022/04/20 14:22:37 by jleslee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include "gc.h"
 #include "minirt.h"
 #include "renderer_image.h"
 
@@ -66,7 +67,7 @@ t_rgbof	calc_first_ray_of_the_day(t_mixer *mixer, t_vector *cam_vec)
 	if (mixer->col_sum.fac != NULL)
 		color_sum = mixer->col_sum;
 	else
-		ft_gc_exit(1);
+		gc_exit(1);
 	inter = *cam_vec;
 	vector_normalize(&inter);
 	mixer->bounces = 0;

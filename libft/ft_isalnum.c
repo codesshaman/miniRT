@@ -3,22 +3,42 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkasper <jkasper@student.42Heilbronn.de    +#+  +:+       +#+        */
+/*   By: jleslee <jleslee@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/17 14:08:36 by jkasper           #+#    #+#             */
-/*   Updated: 2021/09/01 20:15:10 by jkasper          ###   ########.fr       */
+/*   Created: 2021/10/10 09:48:49 by jleslee           #+#    #+#             */
+/*   Updated: 2021/10/26 21:00:06 by jleslee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+//******************Part I******************//
+
 #include "libft.h"
+// #include <stdio.h>
+// #include "ft_isdigit.c"
+// #include "ft_isalpha.c"
+
+// Возвращаем 1 если передано
+// Число или буква, иначе
+// Возвращаем 0
 
 int	ft_isalnum(int c)
 {
-	if (c >= 65 && c <= 90)
+	if (ft_isdigit(c) || ft_isalpha(c))
 		return (1);
-	else if (c >= 97 && c <= 122)
-		return (1);
-	else if (c >= 48 && c <= 57)
-		return (2);
 	return (0);
 }
+
+// int main(int argc, char *argv[]){
+// 	if(argc > 0){
+// 		int t = '3';
+// 		int i = '!';
+// 		int s = 's';
+// 		printf("%d", ft_isalnum(t));
+// 		printf("%c", '\n');
+// 		printf("%d", ft_isalnum(i));
+// 		printf("%c", '\n');
+// 		printf("%d", ft_isalnum(s));
+// 		printf("%c", '\n');
+// 	}
+// 	return (0);
+// }

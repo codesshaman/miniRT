@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   vector_multiplications_numbers.c                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mhahn <mhahn@student.42heilbronn.de>       +#+  +:+       +#+        */
+/*   By: jleslee <jleslee@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/11 00:01:30 by mhahn             #+#    #+#             */
-/*   Updated: 2022/03/11 00:01:58 by mhahn            ###   ########.fr       */
+/*   Created: 2022/03/11 00:01:30 by jleslee           #+#    #+#             */
+/*   Updated: 2022/03/11 00:01:58 by jleslee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

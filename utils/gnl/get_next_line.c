@@ -3,22 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mhahn <mhahn@student.42heilbronn.de>       +#+  +:+       +#+        */
+/*   By: jleslee <jleslee@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/25 20:47:52 by mhahn             #+#    #+#             */
-/*   Updated: 2021/11/25 20:47:53 by mhahn            ###   ########.fr       */
+/*   Created: 2021/11/25 20:47:52 by jleslee           #+#    #+#             */
+/*   Updated: 2021/11/25 20:47:53 by jleslee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 #include "get_next_line_utils.h"
 #include "minirt.h"
+#include "gc.h"
 
 t_string_builder	*string_builder_new(void)
 {
 	t_string_builder	*this;
 
-	this = ft_gc_malloc(sizeof(t_string_builder) + GNL_BUFFER * sizeof(char));
+	this = gc_malloc(sizeof(t_string_builder) + GNL_BUFFER * sizeof(char));
 	if (this != NULL)
 	{
 		this->new_line = NULL;
@@ -58,7 +59,7 @@ char	*string_builder_to_string_nl(t_string_builder *this)
 	length = string_builder_size_nl(this);
 	if (length == 0)
 		return (NULL);
-	str = ft_gc_malloc(length + 1);
+	str = gc_malloc(length + 1);
 	if (str == NULL)
 		return (NULL);
 	mover = 0;
@@ -83,7 +84,7 @@ t_string_builder	*string_builder_cut_nl(t_string_builder *this)
 	while (this != NULL && this->new_line == NULL)
 	{
 		tmp = this->next;
-		ft_gc_free(this);
+		gc_free(this);
 		this = tmp;
 	}
 	if (this != NULL)

@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   builder.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkasper <jkasper@student.42Heilbronn.de    +#+  +:+       +#+        */
+/*   By: jleslee <jleslee@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/09 19:49:44 by mhahn             #+#    #+#             */
-/*   Updated: 2022/04/05 16:46:41 by jkasper          ###   ########.fr       */
+/*   Created: 2022/03/09 19:49:44 by jleslee           #+#    #+#             */
+/*   Updated: 2022/04/05 16:46:41 by jleslee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <math.h>
 #include <stdio.h>
-
-#include "minirt.h"
 #include "matrix.h"
+#include "minirt.h"
+#include "gc.h"
 
 t_vector	rt_cam_svec(t_mixer *mixer, t_vector px, t_vector py, t_vector norm)
 {
@@ -59,11 +59,11 @@ void	build_rays(t_mixer *mixer, t_vector s)
 	size_t		i;
 	size_t		ii;
 
-	mixer->cam.vecs = ft_gc_malloc(mixer->res_y * sizeof(t_vector *));
+	mixer->cam.vecs = gc_malloc(mixer->res_y * sizeof(t_vector *));
 	i = 0;
 	while (i < mixer->res_y)
 	{
-		mixer->cam.vecs[i] = ft_gc_malloc(mixer->res_x * sizeof(t_vector));
+		mixer->cam.vecs[i] = gc_malloc(mixer->res_x * sizeof(t_vector));
 		ii = 0;
 		while (ii < mixer->res_x)
 		{

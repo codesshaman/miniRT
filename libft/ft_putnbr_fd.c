@@ -3,30 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkasper <jkasper@student.42Heilbronn.de    +#+  +:+       +#+        */
+/*   By: jleslee <jleslee@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/19 16:11:42 by jkasper           #+#    #+#             */
-/*   Updated: 2021/06/20 19:24:08 by jkasper          ###   ########.fr       */
+/*   Created: 2021/10/25 23:17:32 by jleslee           #+#    #+#             */
+/*   Updated: 2021/10/26 12:23:40 by jleslee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+//******************Part II******************//
+
+// Посимвольно выводит целое число
+
 #include "libft.h"
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	c;
-	long	o;
+	unsigned int	number;
 
-	o = n;
-	if (o < 0)
+	if (n < 0)
 	{
-		c = '-';
-		write(fd, &c, 1);
-		o *= (-1);
+		ft_putchar_fd('-', fd);
+		number = -n;
 	}
-	if ((o / 10) != 0)
-		ft_putnbr_fd(o / 10, fd);
-	c = (o % 10) + '0';
-	write(fd, &c, 1);
+	else
+		number = n;
+	if (number >= 10)
+		ft_putnbr_fd(number / 10, fd);
+	ft_putchar_fd(number % 10 + '0', fd);
 }

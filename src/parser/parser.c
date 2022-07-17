@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkasper <jkasper@student.42Heilbronn.de    +#+  +:+       +#+        */
+/*   By: jleslee <jleslee@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/09 19:32:14 by jkasper           #+#    #+#             */
-/*   Updated: 2022/04/13 14:56:47 by mhahn            ###   ########.fr       */
+/*   Created: 2022/03/09 19:32:14 by jleslee           #+#    #+#             */
+/*   Updated: 2022/04/13 14:56:47 by jleslee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "libft.h"
 #include "parser.h"
 #include "minirt.h"
+#include "gc.h"
 
 int	add_object(char *buffer, t_mixer *m_data)
 {
@@ -23,15 +24,15 @@ int	add_object(char *buffer, t_mixer *m_data)
 	ft_strnstr(buffer, "C", ft_strlen(buffer)))
 		return (1);
 	if (ft_strnstr(buffer, "pl", ft_strlen(buffer)))
-		add_plane(ft_strsplit(buffer, " 	"), m_data);
+		add_plane(strsplit(buffer, " 	"), m_data);
 	if (ft_strnstr(buffer, "sp", ft_strlen(buffer)))
-		add_sphere(ft_strsplit(buffer, " 	"), m_data);
+		add_sphere(strsplit(buffer, " 	"), m_data);
 	if (ft_strnstr(buffer, "cy", ft_strlen(buffer)))
-		add_cylinder(ft_strsplit(buffer, " 	"), m_data);
+		add_cylinder(strsplit(buffer, " 	"), m_data);
 	if (ft_strnstr(buffer, "L", ft_strlen(buffer)))
-		add_light(ft_strsplit(buffer, " 	"), m_data);
+		add_light(strsplit(buffer, " 	"), m_data);
 	if (ft_strnstr(buffer, "cu", ft_strlen(buffer)))
-		add_cube(ft_strsplit(buffer, " 	"), m_data);
+		add_cube(strsplit(buffer, " 	"), m_data);
 	return (0);
 }
 
@@ -55,22 +56,22 @@ char	**find_line(char **buffer, int size, char *search)
 	}
 	if (amount == -1)
 		return (NULL);
-	return (ft_strsplit(buffer[amount], " 	"));
+	return (strsplit(buffer[amount], " 	"));
 }
 
 static inline int	parser2(char **buffer, t_mixer *m_data)
 {
-	ft_gc_free(buffer);
+	gc_free(buffer);
 	if (m_data->light_count == 0)
 		return (5);
 	m_data->col_sum.sum = ft_calloc(1, (m_data->light_count + 2) * \
 	sizeof(t_vector));
 	if (m_data->col_sum.sum == NULL)
-		ft_gc_exit(1);
+		gc_exit(1);
 	m_data->col_sum.fac = ft_calloc(1, (m_data->light_count + 2) * \
 	sizeof(float));
 	if (m_data->col_sum.fac == NULL)
-		ft_gc_exit(1);
+		gc_exit(1);
 	return (0);
 }
 
@@ -92,7 +93,7 @@ int	parser(char **buffer, t_mixer *m_data, int size)
 	{
 		if (ft_strncmp(buffer[i], "#", 1))
 			add_object(buffer[i], m_data);
-		ft_gc_free(buffer[i]);
+		gc_free(buffer[i]);
 		i++;
 	}
 	return (parser2(buffer, m_data));

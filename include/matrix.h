@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   matrix.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkasper <jkasper@student.42Heilbronn.de    +#+  +:+       +#+        */
+/*   By: jleslee <jleslee@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/07 16:38:06 by jkasper           #+#    #+#             */
-/*   Updated: 2022/03/09 22:03:56 by mhahn            ###   ########.fr       */
+/*   Created: 2022/03/07 16:38:06 by jleslee           #+#    #+#             */
+/*   Updated: 2022/03/09 22:03:56 by jleslee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,5 +134,10 @@ void		matrix_destroy(t_matrix *this);
  * given matrix object. Does nothing if no object is given.
  */
 void		matrix_delete(t_matrix *this);
+long		atol(const char *str);
+float		atoff(char *str);
+char		**realloc_charpp(char **old, size_t new_size);
+int			char_arr_len(char **arr);
+void		free_char_arr(char **arr);
 
 #endif

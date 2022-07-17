@@ -3,31 +3,49 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkasper <jkasper@student.42Heilbronn.de    +#+  +:+       +#+        */
+/*   By: jleslee <jleslee@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/16 12:35:30 by jkasper           #+#    #+#             */
-/*   Updated: 2021/06/20 18:59:46 by jkasper          ###   ########.fr       */
+/*   Created: 2021/10/11 09:03:32 by jleslee           #+#    #+#             */
+/*   Updated: 2021/10/27 21:28:39 by jleslee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+//******************Part I******************//
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+#include "libft.h"
+// #include "ft_strlen.c"
+//#include <stdio.h>
+
+// Копирует из src в dest n - 1
+// Символов, устанавливая в конец
+// Строки нуль-терминант, возвращает
+// Длинну получившейся строки
+
+size_t	ft_strlcpy(char *dest, const char *src, size_t n)
 {
 	size_t	i;
-	size_t	srclen;
+	size_t	len;
 
+	len = ft_strlen(src);
+	if (n == 0)
+		return (len);
 	i = 0;
-	if (src == NULL || dst == NULL)
-		return (0);
-	srclen = ft_strlen(src);
-	if (dstsize == 0)
-		return (srclen);
-	while (i < dstsize - 1 && src[i] != '\0')
+	while (i < n - 1 && src[i])
 	{
-		dst[i] = src[i];
+		dest[i] = src[i];
 		i++;
 	}
-	dst[i] = '\0';
-	return (srclen);
+	dest[i] = '\0';
+	return (len);
 }
+
+// int main(int argc, char *argv[]){
+// 	if(argc > 0){
+// 		char dst[] = "svdvfd";
+// 		char src[] = "234324423423";
+// 		size_t n = *ft_strlcpy(dst, src, (size_t)5);
+// 		printf("%s", n);
+// 		printf("%c", '\n');
+// 	}
+// 	return (0);
+// }

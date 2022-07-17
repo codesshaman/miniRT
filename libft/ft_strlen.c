@@ -3,21 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkasper <jkasper@student.42Heilbronn.de    +#+  +:+       +#+        */
+/*   By: jleslee <jleslee@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/16 12:32:40 by jkasper           #+#    #+#             */
-/*   Updated: 2021/06/20 15:50:08 by jkasper          ###   ########.fr       */
+/*   Created: 2021/10/10 12:12:26 by jleslee           #+#    #+#             */
+/*   Updated: 2021/10/14 20:51:31 by jleslee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+//******************Part I******************//
 
-size_t	ft_strlen(const char *s)
+#include "libft.h"
+//#include <stdio.h>
+
+// Подсчёт длинны строки
+
+int	ft_strlen(const char *s)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
 	while (s[i] != '\0')
+	{
 		i++;
+	}
 	return (i);
 }
+
+// int main(int argc, char *argv[]){
+// 	if(argc > 0){
+// 		printf("%d", ft_strlen(argv[1]));
+// 		printf("%c", '\n');
+// 	}
+// 	return (0);
+// }

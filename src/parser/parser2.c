@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser2.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mhahn <mhahn@student.42heilbronn.de>       +#+  +:+       +#+        */
+/*   By: jleslee <jleslee@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/26 17:31:23 by mhahn             #+#    #+#             */
-/*   Updated: 2022/04/26 17:31:24 by mhahn            ###   ########.fr       */
+/*   Created: 2022/04/26 17:31:23 by jleslee           #+#    #+#             */
+/*   Updated: 2022/04/26 17:31:24 by jleslee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ int	add_ambient(char **line, t_ambient *ambient)
 {
 	if (line == NULL)
 		return (5);
-	ambient->a_light = ft_atof(line[1]);
+	ambient->a_light = atoff(line[1]);
 	ambient->color = get_color(line[2]);
 	ambient->color.cal_r = ambient->color.r;
 	ambient->color.cal_g = ambient->color.g;
 	ambient->color.cal_b = ambient->color.b;
-	ft_free_char_arr(line);
+	free_char_arr(line);
 	return (0);
 }
 
@@ -38,6 +38,6 @@ int	add_camera(char **line, t_cam *camera)
 	vector_normalize(&(camera->normal));
 	camera->fov = ft_atoi(line[4]);
 	vector_normalize(&(camera->ey));
-	ft_free_char_arr(line);
+	free_char_arr(line);
 	return (0);
 }

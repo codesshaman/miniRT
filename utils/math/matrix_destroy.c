@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   matrix_destroy.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkasper <jkasper@student.42Heilbronn.de    +#+  +:+       +#+        */
+/*   By: jleslee <jleslee@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/07 16:37:51 by jkasper           #+#    #+#             */
-/*   Updated: 2022/04/08 17:35:35 by jkasper          ###   ########.fr       */
+/*   Created: 2022/03/07 16:37:51 by jleslee           #+#    #+#             */
+/*   Updated: 2022/04/08 17:35:35 by jleslee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "matrix.h"
+#include "gc.h"
 
 void	matrix_destroy(t_matrix __attribute__((unused)) *this)
 {
@@ -28,11 +29,11 @@ void	matrix_delete(t_matrix *this)
 			i = 0;
 			while (i < this->rows)
 			{
-				ft_gc_free(this->values[i]);
+				gc_free(this->values[i]);
 				i++;
 			}
-			ft_gc_free(this->values);
+			gc_free(this->values);
 		}
-		ft_gc_free(this);
+		gc_free(this);
 	}
 }

@@ -3,23 +3,38 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkasper <jkasper@student.42Heilbronn.de    +#+  +:+       +#+        */
+/*   By: jleslee <jleslee@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/17 14:22:16 by jkasper           #+#    #+#             */
-/*   Updated: 2022/04/08 17:27:34 by mhahn            ###   ########.fr       */
+/*   Created: 2021/10/12 20:29:42 by jleslee           #+#    #+#             */
+/*   Updated: 2021/10/26 20:58:30 by jleslee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+//******************Part I******************//
+
 #include "libft.h"
+//#include <stdio.h>
+//#include "ft_memset.c"
 
-void	*ft_calloc(size_t count, size_t size)
+// Выделяем malloc-ом память
+// И заполняем её нулями
+
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	char	*p;
+	void	*mem;
 
-	p = ft_gc_malloc(size * count);
-	if (p == NULL)
+	mem = NULL;
+	mem = malloc(nmemb * size);
+	if (mem == NULL)
 		return (NULL);
-	ft_bzero(p, count * size);
-	return (((void *)p));
+	ft_bzero(mem, (nmemb * size));
+	return (mem);
 }
+
+// int main(int argc, char *argv[]){
+// 	if(argc > 0){
+// 		printf("%s", ft_calloc((size_t)4, (size_t)8));
+// 		printf("%c", '\n');
+// 	}
+// 	return (0);
+// }

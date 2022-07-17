@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   renderer_image.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkasper <jkasper@student.42Heilbronn.de    +#+  +:+       +#+        */
+/*   By: jleslee <jleslee@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/05 13:20:52 by mhahn             #+#    #+#             */
-/*   Updated: 2022/04/08 18:12:25 by mhahn            ###   ########.fr       */
+/*   Created: 2022/04/05 13:20:52 by jleslee           #+#    #+#             */
+/*   Updated: 2022/04/08 18:12:25 by jleslee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include "mlx.h"
 
 #include "libft.h"
+#include "gc.h"
 #include "renderer_image.h"
 
 t_renderer_image	*renderer_image_new(
@@ -26,7 +27,7 @@ t_renderer_image	*renderer_image_new(
 
 	if (mlx_ptr == NULL)
 		return (NULL);
-	ret = ft_gc_malloc(sizeof(struct s_renderer_image));
+	ret = gc_malloc(sizeof(struct s_renderer_image));
 	if (ret == NULL)
 		return (NULL);
 	ret->mlx_img = mlx_new_image(mlx_ptr, (int) width, (int) height);
@@ -65,5 +66,5 @@ void	renderer_image_delete(t_renderer_image *this)
 	if (this == NULL)
 		return ;
 	renderer_image_destroy(this);
-	ft_gc_free(this);
+	gc_free(this);
 }

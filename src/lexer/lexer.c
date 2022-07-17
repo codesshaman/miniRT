@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lexer.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkasper <jkasper@student.42Heilbronn.de    +#+  +:+       +#+        */
+/*   By: jleslee <jleslee@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/08 15:09:31 by jkasper           #+#    #+#             */
-/*   Updated: 2022/04/13 14:08:48 by mhahn            ###   ########.fr       */
+/*   Created: 2022/03/08 15:09:31 by jleslee           #+#    #+#             */
+/*   Updated: 2022/04/13 14:08:48 by jleslee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "get_next_line.h"
 #include "libft.h"
 #include "lexer.h"
+#include "matrix.h"
 #include <unistd.h>
 #include <stdio.h>
 #include <fcntl.h>
@@ -43,7 +44,7 @@ int	read_to_buffer(int fd, char ***alloc, int *size)
 		i++;
 		if (i == LEXER_BUFFER * buff_time)
 		{
-			buff = ft_realloc_charpp(buff, (LEXER_BUFFER * ++buff_time) + 1);
+			buff = realloc_charpp(buff, (LEXER_BUFFER * ++buff_time) + 1);
 			if (buff == NULL)
 				return (3);
 		}

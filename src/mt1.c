@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mt1.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mhahn   <mhahn@student.42Heilbronn.de      +#+  +:+       +#+        */
+/*   By: jleslee <jleslee@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 1970/01/01 00:00:01 by mhahn             #+#    #+#             */
-/*   Updated: 1970/01/01 00:00:02 by mhahn            ###   ########.fr       */
+/*   Created: 2022/07/11 10:28:01 by jleslee           #+#    #+#             */
+/*   Updated: 2022/07/13 11:12:32 by jleslee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,31 +43,6 @@ static inline void	render_ray(t_thread *self,
 	draw_point(x, y, self->mixer->image, color);
 	add_to_rendered_rays(self->mixer->res_y * self->mixer->res_x);
 }
-
-/*
- * Old block fetcher:
-   i = 0;
-   while (i < tiles_per_axis)
-	{
-		ii = 0;
-		while (ii < tiles_per_axis)
-		{
-			if (pthread_mutex_trylock(&tile_array[i][ii].m_rendered) == 0)
-			{
-				if (!tile_array[i][ii].rendered)
-				{
-					tile_array[i][ii].rendered = true;
-					pthread_mutex_unlock(&tile_array[i][ii].m_rendered);
-					*render = tile_array[i][ii];
-					return (true);
-				}
-				pthread_mutex_unlock(&tile_array[i][ii].m_rendered);
-			}
-			ii++;
-		}
-		i++;
-	}
- */
 
 static bool	rt_block_fetcher(t_tile **tile_array,
 							t_tile *render,

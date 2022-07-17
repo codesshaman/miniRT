@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mhahn <mhahn@student.42heilbronn.de>       +#+  +:+       +#+        */
+/*   By: jleslee <jleslee@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/25 20:47:47 by mhahn             #+#    #+#             */
-/*   Updated: 2021/11/25 20:47:48 by mhahn            ###   ########.fr       */
+/*   Created: 2021/11/25 20:47:47 by jleslee           #+#    #+#             */
+/*   Updated: 2021/11/25 20:47:48 by jleslee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include "get_next_line_utils.h"
 #include "get_next_line.h"
 #include "libft.h"
+#include "gc.h"
 
 void	*gnl_memcpy(void *dst, const void *src, size_t n)
 {
@@ -47,7 +48,7 @@ bool	read_line(t_string_builder **builder, int fd)
 		ret = read(fd, tmp->part, GNL_BUFFER);
 		if (ret <= 0)
 		{
-			ft_gc_free(tmp);
+			gc_free(tmp);
 			if (ret < 0)
 				return (false);
 			break ;

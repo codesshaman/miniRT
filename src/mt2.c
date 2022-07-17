@@ -1,16 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   <error>                                            :+:      :+:    :+:   */
+/*   mt2.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mhahn   <mhahn@student.42Heilbronn.de      +#+  +:+       +#+        */
+/*   By: jleslee <jleslee@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 1970/01/01 00:00:01 by mhahn             #+#    #+#             */
-/*   Updated: 1970/01/01 00:00:02 by mhahn            ###   ########.fr       */
+/*   Created: 2022/07/11 16:00:01 by jleslee           #+#    #+#             */
+/*   Updated: 2022/07/12 19:29:42 by jleslee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
+#include "gc.h"
 
 void	free_mixer_copy(t_mixer *self)
 {
@@ -21,12 +22,12 @@ void	free_mixer_copy(t_mixer *self)
 	while (tmp != NULL)
 	{
 		tmp2 = tmp->next;
-		ft_gc_free(tmp);
+		gc_free(tmp);
 		tmp = tmp2;
 	}
-	ft_gc_free(self->col_sum.sum);
-	ft_gc_free(self->col_sum.fac);
-	ft_gc_free(self);
+	gc_free(self->col_sum.sum);
+	gc_free(self->col_sum.fac);
+	gc_free(self);
 }
 
 static void	append_obj(t_obj_l **head, t_obj_l *appendix)
@@ -52,7 +53,7 @@ static inline t_obj_l	*copy_obj(t_obj_l *self)
 {
 	t_obj_l	*ret;
 
-	ret = ft_gc_malloc(sizeof(t_obj_l));
+	ret = gc_malloc(sizeof(t_obj_l));
 	ret->emitter = self->emitter;
 	ret->inv_normal = self->inv_normal;
 	ret->height = self->height;
@@ -95,7 +96,7 @@ t_mixer	*copy_mixer(t_mixer *self)
 {
 	t_mixer	*ret;
 
-	ret = ft_gc_malloc(sizeof(t_mixer));
+	ret = gc_malloc(sizeof(t_mixer));
 	ret->image = self->image;
 	ret->p_mlx_init = self->p_mlx_init;
 	ret->p_mlx_window = self->p_mlx_window;

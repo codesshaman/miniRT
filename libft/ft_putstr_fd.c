@@ -3,27 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkasper <jkasper@student.42Heilbronn.de    +#+  +:+       +#+        */
+/*   By: jleslee <jleslee@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/19 16:12:34 by jkasper           #+#    #+#             */
-/*   Updated: 2021/07/13 18:09:35 by jkasper          ###   ########.fr       */
+/*   Created: 2021/10/25 22:32:35 by jleslee           #+#    #+#             */
+/*   Updated: 2021/10/26 12:24:11 by jleslee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+//******************Part II******************//
+
+// Посимвольно выводит строку
+
 #include "libft.h"
 
-int	ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
-	int		i;
+	int	i;
 
+	if (!(s) || fd < 0)
+		return ;
 	i = 0;
-	if (s == NULL)
-		return (0);
-	while (s[i] != '\0')
+	while (s[i])
 	{
-		write(fd, &s[i], 1);
+		ft_putchar_fd(s[i], fd);
 		i++;
 	}
-	return (i);
 }
